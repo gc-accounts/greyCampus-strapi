@@ -398,6 +398,181 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOpenCampusBlogOpenCampusBlog
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'open_campus_blogs';
+  info: {
+    description: '';
+    displayName: 'openCampusBlog';
+    pluralName: 'open-campus-blogs';
+    singularName: 'open-campus-blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.DynamicZone<
+      ['image.image-block', 'rich-text.text-block']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::open-campus-blog.open-campus-blog'
+    > &
+      Schema.Attribute.Private;
+    opencampus_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::opencampus-category.opencampus-category'
+    >;
+    opencampus_sub_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::opencampus-sub-category.opencampus-sub-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOpencampusCategoryOpencampusCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'opencampus_categories';
+  info: {
+    displayName: 'opencampusCategory';
+    pluralName: 'opencampus-categories';
+    singularName: 'opencampus-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::opencampus-category.opencampus-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    open_campus_blogs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::open-campus-blog.open-campus-blog'
+    >;
+    opencampus_sub_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::opencampus-sub-category.opencampus-sub-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOpencampusSubCategoryOpencampusSubCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'opencampus_sub_categories';
+  info: {
+    displayName: 'opencampusSubCategory';
+    pluralName: 'opencampus-sub-categories';
+    singularName: 'opencampus-sub-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::opencampus-sub-category.opencampus-sub-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    open_campus_blogs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::open-campus-blog.open-campus-blog'
+    >;
+    parentCategory: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::opencampus-category.opencampus-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    description: '';
+    displayName: 'PrivacyPolicy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTermsOfUseTermsOfUse extends Struct.SingleTypeSchema {
+  collectionName: 'terms_of_uses';
+  info: {
+    description: '';
+    displayName: 'TermsOfUse';
+    pluralName: 'terms-of-uses';
+    singularName: 'terms-of-use';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-of-use.terms-of-use'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -908,6 +1083,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::open-campus-blog.open-campus-blog': ApiOpenCampusBlogOpenCampusBlog;
+      'api::opencampus-category.opencampus-category': ApiOpencampusCategoryOpencampusCategory;
+      'api::opencampus-sub-category.opencampus-sub-category': ApiOpencampusSubCategoryOpencampusSubCategory;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

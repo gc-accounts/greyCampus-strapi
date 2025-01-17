@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opencampus_sub_categories",
+  "info": {
+    "singularName": "opencampus-sub-category",
+    "pluralName": "opencampus-sub-categories",
+    "displayName": "opencampusSubCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "parentCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::opencampus-category.opencampus-category",
+      "inversedBy": "opencampus_sub_categories"
+    },
+    "open_campus_blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::open-campus-blog.open-campus-blog",
+      "mappedBy": "opencampus_sub_category"
+    }
+  }
+}
