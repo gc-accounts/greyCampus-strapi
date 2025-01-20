@@ -34,5 +34,15 @@
   },
   "strapi": {
     "uuid": "e6711cd9-fc1d-445c-b4f1-c6a660f0363c"
+  },
+  "overrides": {
+    "@strapi/admin": "5.5.1",
+    "@strapi/database": "5.5.1",
+    "@strapi/generators": "5.5.1",
+    "@strapi/logger": "5.5.1",
+    "@strapi/permissions": "5.5.1",
+    "@strapi/types": "5.5.1",
+    "@strapi/typescript-utils": "5.5.1",
+    "@strapi/utils": "5.5.1"
   }
 }
