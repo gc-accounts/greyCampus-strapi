@@ -4,4 +4,7 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  admin: {
+    allowEdit: true, // Enable editing of content types in production
+  },
 });
