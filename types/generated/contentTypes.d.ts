@@ -398,6 +398,35 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGreycampusBlogGreycampusBlog
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'greycampus_blogs';
+  info: {
+    displayName: 'greycampus_blogs';
+    pluralName: 'greycampus-blogs';
+    singularName: 'greycampus-blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::greycampus-blog.greycampus-blog'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOpenCampusBlogOpenCampusBlog
   extends Struct.CollectionTypeSchema {
   collectionName: 'open_campus_blogs';
@@ -1083,6 +1112,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::greycampus-blog.greycampus-blog': ApiGreycampusBlogGreycampusBlog;
       'api::open-campus-blog.open-campus-blog': ApiOpenCampusBlogOpenCampusBlog;
       'api::opencampus-category.opencampus-category': ApiOpencampusCategoryOpencampusCategory;
       'api::opencampus-sub-category.opencampus-sub-category': ApiOpencampusSubCategoryOpencampusSubCategory;
