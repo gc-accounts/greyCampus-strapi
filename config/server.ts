@@ -7,4 +7,10 @@ export default ({ env }) => ({
   admin: {
     allowEdit: true, // Enable editing of content types in production
   },
+  cache: {
+    enabled: false, // Disable any internal caching in Strapi
+  },
 });
+
+
+

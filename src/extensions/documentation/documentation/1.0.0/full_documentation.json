@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-22T06:41:48.743Z"
+    "x-generation-date": "2025-01-23T08:13:10.185Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4675,10 +4675,10 @@
           "data": {
             "type": "object",
             "properties": {
-              "title": {
+              "post_title": {
                 "type": "string"
               },
-              "published_date": {
+              "publish_date": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -4688,7 +4688,23 @@
               "category": {
                 "type": "string"
               },
-              "content": {
+              "post_body": {
+                "type": "string"
+              },
+              "post_seo_title": {
+                "type": "string"
+              },
+              "post_url": {
+                "type": "string"
+              },
+              "meta_description": {
+                "type": "string"
+              },
+              "last_modified_date": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "featured_image_url": {
                 "type": "string"
               },
               "locale": {
@@ -4756,10 +4772,10 @@
           "documentId": {
             "type": "string"
           },
-          "title": {
+          "post_title": {
             "type": "string"
           },
-          "published_date": {
+          "publish_date": {
             "type": "string",
             "format": "date-time"
           },
@@ -4769,7 +4785,23 @@
           "category": {
             "type": "string"
           },
-          "content": {
+          "post_body": {
+            "type": "string"
+          },
+          "post_seo_title": {
+            "type": "string"
+          },
+          "post_url": {
+            "type": "string"
+          },
+          "meta_description": {
+            "type": "string"
+          },
+          "last_modified_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "featured_image_url": {
             "type": "string"
           },
           "createdAt": {
@@ -5072,10 +5104,10 @@
                 "documentId": {
                   "type": "string"
                 },
-                "title": {
+                "post_title": {
                   "type": "string"
                 },
-                "published_date": {
+                "publish_date": {
                   "type": "string",
                   "format": "date-time"
                 },
@@ -5085,7 +5117,23 @@
                 "category": {
                   "type": "string"
                 },
-                "content": {
+                "post_body": {
+                  "type": "string"
+                },
+                "post_seo_title": {
+                  "type": "string"
+                },
+                "post_url": {
+                  "type": "string"
+                },
+                "meta_description": {
+                  "type": "string"
+                },
+                "last_modified_date": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "featured_image_url": {
                   "type": "string"
                 },
                 "createdAt": {

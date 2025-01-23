@@ -4,17 +4,18 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "post_title": {
       "type": "string"
     },
-    "published_date": {
+    "publish_date": {
       "type": "datetime"
     },
     "author": {
@@ -23,8 +24,23 @@
     "category": {
       "type": "string"
     },
-    "content": {
+    "post_body": {
       "type": "richtext"
+    },
+    "post_seo_title": {
+      "type": "text"
+    },
+    "post_url": {
+      "type": "text"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "last_modified_date": {
+      "type": "datetime"
+    },
+    "featured_image_url": {
+      "type": "text"
     }
   }
 }
