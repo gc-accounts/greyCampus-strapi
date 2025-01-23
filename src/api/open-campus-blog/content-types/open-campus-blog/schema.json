@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "post_title": {
       "type": "string"
     },
     "content": {
@@ -22,7 +22,7 @@
         "rich-text.text-block"
       ]
     },
-    "opencampus_category": {
+    "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::opencampus-category.opencampus-category",
@@ -33,6 +33,24 @@
       "relation": "manyToOne",
       "target": "api::opencampus-sub-category.opencampus-sub-category",
       "inversedBy": "open_campus_blogs"
+    },
+    "post_seo_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "publish_date": {
+      "type": "datetime"
+    },
+    "last_modified_date": {
+      "type": "datetime"
+    },
+    "featured_image_url": {
+      "type": "string"
+    },
+    "post_body": {
+      "type": "richtext"
     }
   }
 }
