@@ -22,7 +22,7 @@
         "rich-text.text-block"
       ]
     },
-    "category": {
+    "opencampus_category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::opencampus-category.opencampus-category",

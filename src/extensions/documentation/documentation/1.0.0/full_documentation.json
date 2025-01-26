@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-23T19:48:37.343Z"
+    "x-generation-date": "2025-01-26T14:53:25.087Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4729,7 +4729,7 @@
                   }
                 }
               },
-              "category": {
+              "opencampus_category": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -4859,7 +4859,7 @@
               }
             }
           },
-          "category": {
+          "opencampus_category": {
             "type": "object",
             "properties": {
               "id": {
@@ -4930,7 +4930,7 @@
                               }
                             }
                           },
-                          "category": {
+                          "opencampus_category": {
                             "type": "object",
                             "properties": {
                               "id": {
@@ -6059,7 +6059,7 @@
                               }
                             }
                           },
-                          "category": {
+                          "opencampus_category": {
                             "type": "object",
                             "properties": {
                               "id": {
@@ -6530,7 +6530,7 @@
                               }
                             }
                           },
-                          "category": {
+                          "opencampus_category": {
                             "type": "object",
                             "properties": {
                               "id": {

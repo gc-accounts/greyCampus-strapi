@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::open-campus-blog.open-campus-blog",
-      "mappedBy": "category"
+      "mappedBy": "opencampus_category"
     }
   }
 }

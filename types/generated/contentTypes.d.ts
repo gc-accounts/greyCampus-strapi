@@ -417,10 +417,6 @@ export interface ApiOpenCampusBlogOpenCampusBlog
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::opencampus-category.opencampus-category'
-    >;
     content: Schema.Attribute.DynamicZone<
       ['image.image-block', 'rich-text.text-block']
     >;
@@ -436,6 +432,10 @@ export interface ApiOpenCampusBlogOpenCampusBlog
     > &
       Schema.Attribute.Private;
     meta_description: Schema.Attribute.Text;
+    opencampus_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::opencampus-category.opencampus-category'
+    >;
     opencampus_sub_category: Schema.Attribute.Relation<
       'manyToOne',
       'api::opencampus-sub-category.opencampus-sub-category'
