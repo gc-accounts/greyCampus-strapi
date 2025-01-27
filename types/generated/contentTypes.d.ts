@@ -404,35 +404,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiGreycampusBlogGreycampusBlog
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'greycampus_blogs';
-  info: {
-    displayName: 'greycampus_blogs';
-    pluralName: 'greycampus-blogs';
-    singularName: 'greycampus-blog';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::greycampus-blog.greycampus-blog'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiOpenCampusBlogOpenCampusBlog
   extends Struct.CollectionTypeSchema {
   collectionName: 'open_campus_blogs';
@@ -452,12 +423,15 @@ export interface ApiOpenCampusBlogOpenCampusBlog
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featured_image_url: Schema.Attribute.String;
+    last_modified_date: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::open-campus-blog.open-campus-blog'
     > &
       Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text;
     opencampus_category: Schema.Attribute.Relation<
       'manyToOne',
       'api::opencampus-category.opencampus-category'
@@ -466,8 +440,11 @@ export interface ApiOpenCampusBlogOpenCampusBlog
       'manyToOne',
       'api::opencampus-sub-category.opencampus-sub-category'
     >;
+    post_body: Schema.Attribute.RichText;
+    post_seo_title: Schema.Attribute.String;
+    post_title: Schema.Attribute.String;
+    publish_date: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1118,7 +1095,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
-      'api::greycampus-blog.greycampus-blog': ApiGreycampusBlogGreycampusBlog;
       'api::open-campus-blog.open-campus-blog': ApiOpenCampusBlogOpenCampusBlog;
       'api::opencampus-category.opencampus-category': ApiOpencampusCategoryOpencampusCategory;
       'api::opencampus-sub-category.opencampus-sub-category': ApiOpencampusSubCategoryOpencampusSubCategory;
