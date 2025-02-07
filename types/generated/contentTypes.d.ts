@@ -443,6 +443,7 @@ export interface ApiOpenCampusBlogOpenCampusBlog
     post_body: Schema.Attribute.RichText;
     post_seo_title: Schema.Attribute.String;
     post_title: Schema.Attribute.String;
+    post_url: Schema.Attribute.String;
     publish_date: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
