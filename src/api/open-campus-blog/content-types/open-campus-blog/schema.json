@@ -51,6 +51,9 @@
     },
     "post_body": {
       "type": "richtext"
+    },
+    "post_url": {
+      "type": "string"
     }
   }
 }
